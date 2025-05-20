@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex flex-col">
+    <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex flex-col dark:bg-black dark:text-white">
       {/* Navbar */}
-      <nav className="w-full px-8 py-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-indigo-600">Synitia</h1>
+      <nav className="w-full px-8 py-6 flex justify-between items-center shadow-md fixed">
+        <h1 className="text-2xl font-bold text-indigo-600">
+          <a href="/">Synitia</a>
+        </h1>
         <div className="space-x-6">
           <a
             href="#features"
@@ -26,7 +28,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero */}
-      <section className="flex flex-col-reverse md:flex-row items-center justify-between px-8 py-16 max-w-6xl mx-auto">
+      <section className="flex flex-col-reverse md:flex-row items-center justify-between px-8 py-16 max-w-6xl mx-auto mt-16">
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
           <h2 className="text-6xl font-extrabold text-indigo-700 animate-fadeIn">
             Organiza tu día con IA
@@ -56,16 +58,16 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
           {[
             {
-              title: "Seguimiento en tiempo real",
-              desc: "Registra tus hábitos automáticamente al instante.",
+              title: "Visualiza tu rutina",
+              desc: "Ahora puedes optimizar tu productividad con IA.",
             },
             {
-              title: "Recordatorios inteligentes",
-              desc: "No olvides ninguna tarea con alertas basadas en IA.",
+              title: "One for All",
+              desc: "Todo tu flujo de trabajo en una sola herramienta.",
             },
             {
-              title: "Metas basadas en datos",
-              desc: "Define objetivos personalizados según tu desempeño.",
+              title: "Metas basadas en misiones",
+              desc: "Cumplir objetivos personales nunca ha sido tan divertido.",
             },
           ].map((f) => (
             <div
@@ -104,13 +106,13 @@ export default function HomePage() {
         <Button className="bg-white text-indigo-600 px-12 py-3 rounded-full font-semibold hover:scale-105 transform transition">
           Prueba Synitia Gratis
         </Button>
-      </section>
 
-      {/* Footer */}
-      <footer className="py-6 text-center text-gray-500">
-        &copy; {new Date().getFullYear()} Synitia. Todos los derechos
-        reservados.
-      </footer>
+        {/* Footer */}
+        <footer className="py-6 text-center text-gray-50">
+          &copy; {new Date().getFullYear()} Synitia. Todos los derechos
+          reservados.
+        </footer>
+      </section>
     </main>
   );
 }
