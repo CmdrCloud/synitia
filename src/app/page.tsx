@@ -1,103 +1,116 @@
+// src/app/page.tsx
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+    <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex flex-col">
+      {/* Navbar */}
+      <nav className="w-full px-8 py-6 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-indigo-600">Synitia</h1>
+        <div className="space-x-6">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#features"
+            className="text-gray-600 hover:text-indigo-600 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Funciones
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#about"
+            className="text-gray-600 hover:text-indigo-600 transition"
           >
-            Read our docs
+            Acerca
           </a>
+          <Button className="bg-indigo-600 text-white">Empezar</Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero */}
+      <section className="flex flex-col-reverse md:flex-row items-center justify-between px-8 py-16 max-w-6xl mx-auto">
+        <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
+          <h2 className="text-6xl font-extrabold text-indigo-700 animate-fadeIn">
+            Organiza tu día con IA
+          </h2>
+          <p className="text-lg text-gray-700">
+            Synitia supervisa tu rutina diaria y te ofrece sugerencias
+            inteligentes para maximizar tu productividad.
+          </p>
+          <Button className="bg-indigo-600 text-white px-10 py-3 rounded-2xl hover:scale-105 transform transition">
+            Comienza ahora
+          </Button>
+        </div>
+        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <div className="relative w-full h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/dashboard-preview.png"
+              alt="Vista previa tablero Synitia"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="bg-indigo-50 py-16">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+          {[
+            {
+              title: "Seguimiento en tiempo real",
+              desc: "Registra tus hábitos automáticamente al instante.",
+            },
+            {
+              title: "Recordatorios inteligentes",
+              desc: "No olvides ninguna tarea con alertas basadas en IA.",
+            },
+            {
+              title: "Metas basadas en datos",
+              desc: "Define objetivos personalizados según tu desempeño.",
+            },
+          ].map((f) => (
+            <div
+              key={f.title}
+              className="p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
+            >
+              <h3 className="text-2xl font-semibold mb-4 text-indigo-600">
+                {f.title}
+              </h3>
+              <p className="text-gray-700">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-16 px-8 max-w-4xl mx-auto text-center">
+        <h3 className="text-3xl font-bold mb-4 text-gray-900">
+          ¿Qué hace Synitia?
+        </h3>
+        <p className="text-gray-700">
+          Nuestra IA analiza tus patrones de actividad, identifica áreas de
+          mejora y te guía con recomendaciones prácticas para optimizar cada
+          día.
+        </p>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-indigo-600 text-white text-center px-8">
+        <h4 className="text-3xl font-bold mb-4">
+          Listo para impulsar tu productividad?
+        </h4>
+        <p className="mb-6">
+          Únete a Synitia y transforma tu rutina con inteligencia artificial.
+        </p>
+        <Button className="bg-white text-indigo-600 px-12 py-3 rounded-full font-semibold hover:scale-105 transform transition">
+          Prueba Synitia Gratis
+        </Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-gray-500">
+        &copy; {new Date().getFullYear()} Synitia. Todos los derechos
+        reservados.
       </footer>
-    </div>
+    </main>
   );
 }
