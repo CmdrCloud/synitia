@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* Navbar */}
       <nav className="w-full px-8 py-6 flex justify-between items-center shadow-md fixed">
         <h1 className="text-2xl font-bold text-indigo-600">
-          <a href="/">Synitia</a>
+          Synitia
         </h1>
         <div className="space-x-6">
           <a
