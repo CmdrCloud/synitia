@@ -7,9 +7,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex flex-col dark:bg-black dark:text-white">
       {/* Navbar */}
       <nav className="w-full px-8 py-6 flex justify-between items-center shadow-md fixed">
-        <h1 className="text-2xl font-bold text-indigo-600">
-          Synitia
-        </h1>
+        <h1 className="text-2xl font-bold text-indigo-600">Synitia</h1>
         <div className="space-x-6">
           <a
             href="#features"
