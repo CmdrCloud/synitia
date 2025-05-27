@@ -1,13 +1,20 @@
 // src/app/page.tsx
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
+  function handleClick() {
+    window.open("/images/BMC.png", "_blank");
+  }
   return (
     <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex flex-col dark:bg-black dark:text-white">
       {/* Navbar */}
-      <nav className="w-full px-8 py-6 flex justify-between items-center shadow-md fixed">
-        <h1 className="text-2xl font-bold text-indigo-600">Synitia</h1>
+      <nav className="lg:w-full md:w-full w-full px-8 py-6 flex justify-between items-center shadow-md fixed">
+        <Link href="/">
+          <h1 className="text-2xl font-bold text-indigo-600">Synitia</h1>
+        </Link>
         <div className="space-x-6">
           <a
             href="#features"
@@ -21,7 +28,9 @@ export default function HomePage() {
           >
             Acerca
           </a>
-          <Button className="bg-indigo-600 text-white">Empezar</Button>
+          <Link href="/auth/login">
+            <Button className="bg-indigo-600 text-white">Empezar</Button>
+          </Link>
         </div>
       </nav>
 
@@ -35,9 +44,17 @@ export default function HomePage() {
             Synitia supervisa tu rutina diaria y te ofrece sugerencias
             inteligentes para maximizar tu productividad.
           </p>
-          <Button className="bg-indigo-600 text-white px-10 py-3 rounded-2xl hover:scale-105 transform transition">
-            Comienza ahora
-          </Button>
+          <div className="flex flex-col md:flex-row ">
+            <Button className="bg-indigo-600 text-white px-10 py-3 rounded-2xl hover:scale-105 transform transition">
+              Comienza ahora
+            </Button>
+            <Button
+              className="bg-indigo-600 text-white px-10 py-3 rounded-2xl hover:scale-105 transform transition"
+              onClick={handleClick}
+            >
+              Ver BMC
+            </Button>
+          </div>
         </div>
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <div className="relative w-full h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
@@ -60,7 +77,7 @@ export default function HomePage() {
               desc: "Ahora puedes optimizar tu productividad con IA.",
             },
             {
-              title: "One for All",
+              title: "Todo en uno",
               desc: "Todo tu flujo de trabajo en una sola herramienta.",
             },
             {

@@ -9,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({ children, className = "", ...props }: ButtonProps) {
   return (
     <button
-      className={`px-6 py-2 rounded-full font-medium shadow hover:shadow-lg transition ${className}`}
+      className={`cursor-pointer px-6 py-2 rounded-full font-medium shadow hover:shadow-lg transition ${className}`}
       {...props}
     >
       {children}
