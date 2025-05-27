@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button"; // adjust path if needed
 
 export default function Navbar() {
   return (
